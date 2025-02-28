@@ -21,7 +21,7 @@ case "$EXT" in
         ;;
     java)
         IMAGE="openjdk:17"
-        CMD="javac $FILE && java -cp samples sample"
+        CMD="javac $FILE && java -cp $(dirname $FILE) $(basename $FILE .java)"
         ;;
     cpp|cc)
         IMAGE="gcc:latest"
